@@ -2,67 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JS Practice</title>
-    <meta name="keywords" content="Beginner, HTML, CSS">
-    <meta name="description" content="Intern's web-project">
-    <meta name="author" content="Daria Genze">
+    <title>Title</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
+<body id="body">
+<h1 id="heading">Добро пожаловать в сбережения!</h1>
+<button id="button">press to console.log</button>
+<h2>Твои сбережения:</h2>
+<div id="savings"></div>
 
-<div class="box">
-    <div class="ball" draggable="true"></div>
-    <div class="ball" draggable="true"></div>
-    <div class="ball" draggable="true"></div>
-</div>
+<form id='form1' method="get">
+    <label for="name">Введите имя</label>
+    <input type="text" id="name" name="name">
+    <label for="age">Введите возраст</label>
+    <input type="text" id="age" name="age">
+    <input type="submit">
+</form>
 
+<form id="form">
+    <label for="sum">Какую сумму хотите добавить к сбережениям?</label>
+    <input type="text" id="sum" name="money">
+    <input type="submit">
+</form>
 
-
-<div id="ttt">ttttttt</div>
-
-<div class="calcBody">
-
-<!--    <label for="firstNum">Введите первое число:</label>-->
-<!--    <input type="text" id="firstNum">-->
-
-<!--    <label for="secondNum">Введите первое число:</label>-->
-<!--    <input type="text" id="secondNum">-->
-
-<!--    <label for="answerString">Ответ:</label>-->
-<!--    <output id="answerString"></output>-->
-
-    <div class="calcRow">
-        <div id="1">1</div>
-        <div id="2">2</div>
-        <div id="3">3</div>
-        <div id="*" class="sign">*</div>
-    </div>
-
-    <div class="calcRow">
-        <div id="4">4</div>
-        <div id="5">5</div>
-        <div id="6">6</div>
-        <div id="/" class="sign">/</div>
-    </div>
-
-    <div class="calcRow">
-        <div id="7">7</div>
-        <div id="8">8</div>
-        <div id="9">9</div>
-        <div id="+" class="sign">+</div>
-
-    </div>
-
-    <div class="calcRow">
-        <div id="0">0</div>
-        <div id="-" class="sign">-</div>
-        <div id="=">=</div>
-
-
-    </div>
-</div>
-
-<script src="scripts/scriptoo.js"></script>
-
+<img src="pics/savings.png" alt="ваша копилка!" id="img1" class="image">
+<img src="" id="img2" class="image">
 </body>
+<script src="scriptsSaving/script.js"></script>
+
 </html>

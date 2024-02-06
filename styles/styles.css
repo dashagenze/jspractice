@@ -16,6 +16,10 @@ body {
     display: none;
 }
 
+h2 {
+    display: none;
+}
+
 .savingsShow {
     font-size: 70px;
     font-weight: bold;

@@ -69,6 +69,7 @@ function adultStyle (name) {
 
     h1.style.fontFamily = 'Times New Roman, serif';
     h1.style.color = '#554E55';
+    h2.style.display = 'block';
     h2.style.fontFamily = 'Times New Roman, serif';
     h2.style.color = '#554E55';
 }
@@ -84,6 +85,7 @@ function minorStyle (name) {
 
     h1.style.fontFamily = '"Comic Sans MS", serif';
     h1.style.color = '#EA64E9'
+    h2.style.display = 'block';
     h2.style.fontFamily = '"Comic Sans MS", serif';
     h2.style.color = '#EA64E9'
 }

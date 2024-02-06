@@ -1,70 +1,64 @@
-// let age = prompt('Назовите свой возраст', '20');
-// let name = prompt('Назовите свое имя!', 'Фуф Барович');
 let h1 = document.getElementById('heading');
 let h2 = document.getElementById('h2');
-let plussum = document.getElementById('sum')
-let button = document.getElementById('button');
 
 let img1 = document.getElementById('img1');
 let img2 = document.getElementById('img2');
 let body = document.getElementById('body');
 
-let name = document.getElementById('name');
-let age = document.getElementById('age');
 
 
 
-let savingsArea = document.getElementById('savings');
-let form = document.getElementById('form1');
+const MAINFORM = document.getElementById('MAINFORM');
+MAINFORM.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(MAINFORM);
+
+    const name = formData.get('name');
+    const age = formData.get('age');
+    console.log(typeof name)
+    console.log( name)
+
+    try {
+        if (name != '') {
+            if (typeof +age == 'number') {
+                if (age >= 18) {
+                    adultStyle(name)
+                } else if (age < 18 && age != '') {
+                    minorStyle(name)
+                } else alertIncorrect()
+            }
+        } else alertIncorrect()
+    } catch (err) {console.log(err.name)}
+
+});
 
 
-function serializeForm(formNode) {
-    const { elements } = formNode
 
-    Array.from(elements)
-        .forEach((element) => {
-            const { name, value } = element
-            console.log({ name, value })
-        })
+
+const SAVINGS_FORM = document.getElementById('savingsForm')
+SAVINGS_FORM.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(SAVINGS_FORM);
+
+    const addedSum = formData.get('money');
+    let savingsSum = document.getElementById('savings');
+
+    addToElement(savingsSum, addedSum);
+});
+
+function addToElement (field, addedSum) {
+    let initialSavingsfield = field.textContent;
+    initialSavingsfield = +initialSavingsfield
+    function plus(initial, added) {
+        return +initial + +added
+    }
+    field.textContent = plus(initialSavingsfield, addedSum);
+
+
 }
-
-
-function handleFormSubmit(event) {
-    event.preventDefault()
-    serializeForm(applicantForm)
-}
-
-const applicantForm = document.getElementById('form1')
-applicantForm.addEventListener('submit', handleFormSubmit)
-
-
-
-
-
-// function addtoSavings () {
-//     typeof +plussum.textContent == 'number' ?
-//     savingsArea.textContent ++ : form.style.backgroundColor = 'purple';
-//     return savingsArea.textContent
-// }
-//
-// form.onsubmit = addtoSavings();
-
-button.onclick = () => console.log(name);
-
-try {
-    if (name != null) {
-        if (typeof +age == 'number') {
-            if (age >= 18) {
-                adultStyle(name)
-            } else if (age < 18 && age != null) {
-                minorStyle(name)
-            } else alertIncorrect()
-        }
-    } else alertIncorrect()
-} catch (err) {console.log(err.name)}
-
-
 function adultStyle (name) {
+    MAINFORM.style.display = 'none';
+    SAVINGS_FORM.style.display = 'block';
     h1.innerText = `Здрастуйте, ${name}🤝`;
     img1.src = 'pics/offic.png';
     img2.src = 'pics/suitcase.png';
@@ -79,6 +73,8 @@ function adultStyle (name) {
 }
 
 function minorStyle (name) {
+    MAINFORM.style.display = 'none';
+    SAVINGS_FORM.style.display = 'block';
     h1.innerText = `Приветик, ${name}🥺`
     img1.src = 'pics/dream.png';
     img2.src = 'pics/pigmoney.png';
@@ -91,6 +87,6 @@ function minorStyle (name) {
     h2.style.color = '#EA64E9'
 }
 
-// function alertIncorrect (){ alert('Пожалуйста, перезагрузите страницу и введите свои данные :)') }
+function alertIncorrect (){ alert('Пожалуйста, перезагрузите страницу и введите свои данные :)') }
 
 

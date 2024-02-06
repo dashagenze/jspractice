@@ -2,9 +2,24 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: darkseagreen;
+}
 .image {
     object-fit: contain;
     width: 20%;
     position: relative;
     transform: translate(30%, 30%);
+}
+
+#savingsForm {
+    display: none;
+}
+
+.savingsShow {
+    font-size: 70px;
+    font-weight: bold;
+    text-decoration: underline;
+
+    margin-left: 10%;
 }

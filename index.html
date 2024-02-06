@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="icon" href="pics/favicon.ico"/>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body id="body">
 <h1 id="heading">Добро пожаловать в сбережения!</h1>
-<button id="button">press to console.log</button>
-<h2>Твои сбережения:</h2>
-<div id="savings"></div>
 
-<form id='form1' method="get">
+<h2>Твои сбережения:</h2>
+<div id="savings" class="savingsShow"></div>
+
+<form id='MAINFORM' >
     <label for="name">Введите имя</label>
     <input type="text" id="name" name="name">
     <label for="age">Введите возраст</label>
@@ -19,14 +20,15 @@
     <input type="submit">
 </form>
 
-<form id="form">
+<form id="savingsForm">
     <label for="sum">Какую сумму хотите добавить к сбережениям?</label>
     <input type="text" id="sum" name="money">
     <input type="submit">
 </form>
 
 <img src="pics/savings.png" alt="ваша копилка!" id="img1" class="image">
-<img src="" id="img2" class="image">
+<img src="" alt="" id="img2" class="image">
+
 </body>
 <script src="scriptsSaving/script.js"></script>
 

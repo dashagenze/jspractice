@@ -6,7 +6,7 @@ let img2 = document.getElementById('img2');
 let body = document.getElementById('body');
 
 
-
+// NAME AND AGE FORM
 
 const MAINFORM = document.getElementById('MAINFORM');
 MAINFORM.addEventListener('submit', (e) => {
@@ -33,7 +33,7 @@ MAINFORM.addEventListener('submit', (e) => {
 });
 
 
-
+// SAVINGS FORM
 
 const SAVINGS_FORM = document.getElementById('savingsForm')
 SAVINGS_FORM.addEventListener('submit', (e) => {
@@ -53,9 +53,11 @@ function addToElement (field, addedSum) {
         return +initial + +added
     }
     field.textContent = plus(initialSavingsfield, addedSum);
-
-
 }
+
+
+// INTERFACES BASED ON A USER
+
 function adultStyle (name) {
     MAINFORM.style.display = 'none';
     SAVINGS_FORM.style.display = 'block';
@@ -69,7 +71,6 @@ function adultStyle (name) {
     h1.style.color = '#554E55';
     h2.style.fontFamily = 'Times New Roman, serif';
     h2.style.color = '#554E55';
-
 }
 
 function minorStyle (name) {

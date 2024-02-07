@@ -9,22 +9,33 @@
 <body id="body">
 <h1 id="heading">Добро пожаловать в сбережения!</h1>
 
-<h2 id="h2">Твои сбережения:</h2>
+
+<h2 class="h2">Твои сбережения:</h2>
 <div id="savings" class="savingsShow"></div>
 
-<form id='MAINFORM' >
+<form id='MAINFORM'>
     <label for="name">Введите имя</label>
-    <input type="text" id="name" name="name">
+    <input type="text" id="name" name="name" placeholder="Ванюша" required>
     <label for="age">Введите возраст</label>
-    <input type="text" id="age" name="age">
+    <input type="number" id="age" name="age" min="1" placeholder="10" required>
     <input type="submit">
 </form>
 
 <form id="savingsForm">
     <label for="sum">Какую сумму хотите добавить к сбережениям?</label>
-    <input type="text" id="sum" name="money">
+    <input type="number" id="sum" name="money" min="1">
     <input type="submit">
 </form>
+
+<h2 class="h2">Твои траты:</h2>
+<div id="spendingsField" class="spendingsShow"></div>
+
+<form id="SPENDINGS_FORM">
+    <label for="spendings">Внесите свои траты :(</label>
+    <input type="number" id="spendings" name="spend" min="1">
+    <input type="submit">
+</form>
+
 
 <img src="pics/savings.png" alt="ваша копилка!" id="img1" class="image">
 <img src="" alt="" id="img2" class="image">

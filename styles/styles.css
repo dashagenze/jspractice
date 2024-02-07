@@ -12,14 +12,10 @@ body {
     transform: translate(30%, 30%);
 }
 
+
 #savingsForm {
     display: none;
 }
-
-h2 {
-    display: none;
-}
-
 .savingsShow {
     font-size: 70px;
     font-weight: bold;
@@ -27,3 +23,25 @@ h2 {
 
     margin-left: 10%;
 }
+
+
+#SPENDINGS_FORM {
+    display: none;
+}
+
+.spendingsShow {
+    width: 30%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.h2 {
+    display: none;
+}
+
+
+input:valid {
+    background-color: #ddffdd;
+}
+

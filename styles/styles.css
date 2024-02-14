@@ -1,45 +1,22 @@
-.calcBody {
-    margin: 30vh 30vw;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
-.calcRow {
-    display: flex;
-    gap: 10px;
-}
-
-.calcRow div {
-    border: forestgreen 4px outset;
-    background-color: cornsilk;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-
-    cursor: pointer;
-}
-
-.calcRow div:hover {
-    opacity: 0.7;
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #333;
 }
 
 
+#ttt {
+    background-color: forestgreen;
+}
 
-/** {*/
-/*    margin: 0;*/
-/*    box-sizing: border-box;*/
-/*    font-size: 20px;*/
-/*    color: #333;*/
-/*}*/
-
-
-/*.ball {*/
-/*    background-color: indigo;*/
-/*    width: 100px;*/
-/*    height: 100px;*/
-/*    border-radius: 5px;*/
-/*    cursor: grab;*/
-/*}*/
+#parent {
+    background-color: bisque;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    cursor: grab;
+}
 
 

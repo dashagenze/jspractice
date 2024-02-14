@@ -1,144 +1,87 @@
-
-const firstNumField = document.getElementById('firstNum');
-const secondNumField = document.getElementById('secondNum');
-const answerString = document.getElementById('answerString')
-
-const one = document.getElementById('1').id;
-const two = document.getElementById('2');
-const three = document.getElementById('3').id;
-
-const four = document.getElementById('4').id;
-const five = document.getElementById('5').id;
-const six = document.getElementById('6').id;
-
-const seven = document.getElementById('7').id;
-const eight = document.getElementById('8').id;
-const nine = document.getElementById('9').id;
-
-const zero = document.getElementById('0').id;
+let btn = document.getElementById('btn');
 
 
-let sign = document.querySelectorAll('.sign');
+let ttt = document.getElementById('ttt'),
+    parent = document.getElementById('parent');
 
-console.log(one);
-console.log(typeof one);
-console.log(two);
+let object = {
+    'foo': 44,
+}
 
-firstNumField.innerText = '';
-secondNumField.innerText = '';
+console.log(object.type);
 
-// let twoo = toString(two.id);
-// two.onclick = math(twoo);
+ttt.addEventListener('click', (e) => {
+    e.stopPropagation()
+    e.currentTarget.style.backgroundColor = 'red';
 
-let btn = document.getElementById('ttt');
+    console.log(e.type);
+    console.log(e.target);
+    console.log(e.currentTarget);
 
-btn.onclick =  () => {alert('workin')};
+})
 
-two.onclick = (Math(two));
 
-function math (pressedNum1) {
 
-    pressedNum1 = pressedNum1.id
 
-    switch (pressedNum1) {
-        case '1': addToFirstField(pressedNum1)
-            break
-        case '2': addToFirstField(pressedNum1)
-            break
-        case '3': addToFirstField(pressedNum1)
-            break
-        case '4': addToFirstField(pressedNum1)
-            break
-        case '5': addToFirstField(pressedNum1)
-            break
-        case '6': addToFirstField(pressedNum1)
-            break
-        case '7': addToFirstField(pressedNum1)
-            break
-        case '8': addToFirstField(pressedNum1)
-            break
-        case '9': addToFirstField(pressedNum1)
-            break
-        case '0': addToFirstField(pressedNum1)
-            break
+
+
+
+
+
+// let hunger = document.getElementById('').textContent;
+
+class Pet {
+
+    constructor(name) {
+        this.name = name;
+        this.hunger = 100;
     }
 
-    return firstNumField
+    // hungerDecrease() {
+    //     setInterval(function decrease(hunger) {
+    //         hunger--
+    //         console.log(this.hunger);
+    //         // let hungerField = document.getElementById('hunger');
+    //         // hungerField.textContent = hunger;
+    //         // if (hungerField.textContent === '0') {
+    //         //     alert('баня умер');
+    //         //     clearInterval(hungerDecrease)
+    //         // }
+    //     }, 1000)
+
+    // hungerDecrease() {
+    //     let hungerDecrease = setInterval(function decrease() {
+    //         hunger--
+    //         let hungerField = document.getElementById('hunger');
+    //         hungerField.textContent = hunger;
+    //         if (hungerField.textContent === '0') {
+    //             alert('баня умер');
+    //             clearInterval(hungerDecrease)
+    //         }
+    //     }, 10000)
+
+        // function feed(fed) {
+        //     hunger += +fed;
+        //     let hungerField = document.getElementById('hunger');
+        //     hungerField.textContent = hunger;
+        // }
+    }
+
+
+
+    // sayHelo(name) {
+    //     alert(`привет, ${this.name}!🥺`)
+    // }
+
 
 }
 
+let bunny = new Pet('Баня')
+bunny.hungerDecrease(bunny.hunger)
 
+btn.onclick = () => { bunny.feed(50);}
 
-
-
-
-
-
-
-
-function Math (pressedNum1, sign, pressedNum2) {
-    pressedNum1.onclick = addToFirstField(pressedNum1)
-    addSign(sign)
-    pressedNum2.onclick = addToSecondField(pressedNum2)
-    return pressedNum1
-}
-
-function addToFirstField (pressedNum1) {
-    pressedNum1 = pressedNum1.id;
-    firstNumField.innerText += pressedNum1;
-    return firstNumField
-}
-
-function addToSecondField (pressedNum2) {
-    pressedNum2 = pressedNum2.id;
-    firstNumField.innerText += pressedNum2;
-    return firstNumField
-}
-
-// function addSign (sign) {
-//     sign.onclick =
-//         function (){
-//             if (sign == '*') {
-//
-//             } else if (sign == '/') {
-//
-//             } else if (sign == '+') {
-//
-//             } else if (sign == '-') {
-//
-//             } else {
-//                 // alert('введите знак')
-//             }
-//         }
-// }
-
-
-
-
-
-
-//
-// if (sign == '*') {
-//     function multiply(a, b) {
-//         return a * b
-//     }
-// } else if (sign == '/') {
-//     function division(a, b) {
-//         return a / b
-//     }
-// } else if (sign == '+') {
-//     function sum(a, b) {
-//         return a + b
-//     }
-// } else if (sign == '-') {
-//     function minus(a, b) {
-//         return a - b
-//     }
-// } else {
-//     // alert('введите знак')
-// }
-
-
-
+// bunny.sayHelo();
+console.log(bunny.hunger);
 
 

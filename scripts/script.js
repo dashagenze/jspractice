@@ -23,36 +23,28 @@
 
 
 
-let hunger = 100;
-
-console.log(hunger);
 
 
 
 class Pet {
 
-    constructor(name) {
+    constructor(name, type, hunger) {
         this.name = name;
+        this.type = type;
+        this.hunger = hunger;
     }
 
-    sayHelo(name) {
+    sayHelo() {
         alert(`привет, ${this.name}!🥺`)
     }
 
+    hungerDecrease() {
+        setInterval(function decrease() {
 
-    // hungerdecrease = setInterval(decrease,10);
+            console.log(this.hunger);
 
-    i = setInterval(function decrease() {
-        hunger--
-        let hungerfield = document.getElementById('hunger')
-        hungerfield.textContent = String(hunger);
-
-        if (hungerfield.textContent === '0') {
-            alert(`${this.name} умер :/`);
-            clearInterval();
-        }
-    }, 100)
-
+        }, 1000)
+    }
 
 
 
@@ -61,9 +53,9 @@ class Pet {
 
 
 
-let bunny = new Pet('Баня')
+let bunny = new Pet('Баня', 'bunny', 100)
 
-
+bunny.hungerDecrease();
 // setInterval(decrease.bind,10);
 
 
@@ -75,22 +67,6 @@ let bunny = new Pet('Баня')
 // bunny.sayHelo();
 
 
-
-// hungerDecrease() {
-//     setInterval(function decrease() {
-//         hunger--
-//         console.log(this.hunger);
-//
-//
-//
-//
-//         // let hungerField = document.getElementById('hunger');
-//         // hungerField.textContent = hunger;
-//         // if (hungerField.textContent === '0') {
-//         //     alert('баня умер');
-//         //     clearInterval(hungerDecrease)
-//         // }
-//     }, 1000)}
 
 
 

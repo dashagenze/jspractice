@@ -1,14 +1,42 @@
 
 * {
-    margin: 0;
+    margin: 10px;
     box-sizing: border-box;
     font-size: 20px;
     color: #333;
 }
 
+body {
+    position: relative;
+}
 
-#ttt {
-    background-color: forestgreen;
+.night {
+    background-color: slategray;
+}
+.day {
+    background-color: white;
+}
+
+
+.cat_animated {
+    background-image: url("assets/cat/animated-cat.gif");
+}
+
+#lamp {
+    height: 400px;
+    position: absolute;
+    right: 50%;
+    cursor: pointer;
+}
+
+#hunger {
+    width: 20em;
+}
+
+#hungerAlert {
+    background-color: darksalmon;
+    position: relative;
+    margin-left: 50%;
 }
 
 #parent {

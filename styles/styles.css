@@ -13,6 +13,10 @@ body {
 .night {
     background-color: slategray;
 }
+.night #feedSection {
+    background-color: slategray;
+}
+
 .day {
     background-color: white;
 }

@@ -7,7 +7,6 @@ let bunnyBtn = document.getElementById('bunnyBtn'),
     feedLabel = document.getElementById('feedLabel');
 let bunnyImg = document.getElementById('bunny');
 let catImg = document.getElementById('kitty');
-let feedSection = document.getElementById('feedSection');
 let petImg = document.getElementById('petImg');
 let pet = document.getElementById('pet');
 let hungerAlert = document.getElementById('hungerAlert');
@@ -17,6 +16,7 @@ let petPick = document.getElementById('petPick');
 let lamp = document.getElementById('lamp');
 let page = document.querySelector('.page');
 let tryagain = document.getElementById('tryagain');
+const foods = document.querySelectorAll('.fod');
 
 
 
@@ -123,6 +123,7 @@ class Cat extends Pet {
         alert(`${this.name} мурчит🥰`)
     }
 
+
 }
 
 //ВЫБОР ПИТОМЦА
@@ -135,7 +136,7 @@ bunnyBtn.onclick = () => {
     jump.style.display = 'block';
     petPick.style.display = 'none';
 
-    petImg.src = 'assets/bunny/animated-bunny.gif';
+    petImg.src = 'assets/bunny/animated-bunny.gif'
 
     bunny.decrease()
     bunny.welcome()
@@ -144,17 +145,28 @@ bunnyBtn.onclick = () => {
     jump.onclick = () => bunny.jump()
 
 
-    feedSection.onclick = () => {changeImg(petImg, 'assets/bunny/animated-bunny.gif', 'assets/bunny/bunny_eatin.gif')}
-
     lamp.onclick = () => {
         if (page.classList.toggle('day')) petImg.src = 'assets/bunny/animated-bunny.gif';
         if (page.classList.toggle('night')) petImg.src = 'assets/bunny/bunny_sleepin.gif';
+
+        foods.forEach((item) => {
+            item.disabled = !item.disabled;
+        });
     }
 
 
-    strobery.onclick = () => bunny.strobery();
-    burgir.onclick = () => bunny.burgir();
-    pinza.onclick = () => bunny.pinza();
+    strobery.onclick = () => {
+        bunny.strobery();
+        changeImg(petImg, 'assets/bunny/animated-bunny.gif', 'assets/bunny/bunny_eatin.gif');
+    }
+    burgir.onclick = () => {
+        bunny.burgir();
+        changeImg(petImg, 'assets/bunny/animated-bunny.gif', 'assets/bunny/bunny_eatin.gif');
+    }
+    pinza.onclick = () => {
+        bunny.pinza();
+        changeImg(petImg, 'assets/bunny/animated-bunny.gif', 'assets/bunny/bunny_eatin.gif');
+    }
 
 }
 
@@ -175,20 +187,33 @@ catBtn.addEventListener('click', () => {
     kitty.decrease()
     kitty.welcome()
 
-    feedSection.onclick = () => {changeImg(petImg, 'assets/cat/animated-cat.gif', 'assets/cat/cat-noodles.gif') }
 
     lamp.onclick = () => {
         if (page.classList.toggle('day')) petImg.src = 'assets/cat/animated-cat.gif';
         if (page.classList.toggle('night')) petImg.src = 'assets/cat/cat_sleepin.gif';
+
+        foods.forEach((item) => {
+            item.disabled = !item.disabled;
+        });
     }
 
 
     sayHi.onclick = () => kitty.sayHelo()
     pet.onclick = () => kitty.purr();
 
-    strobery.onclick = () => kitty.strobery();
-    burgir.onclick = () => kitty.burgir();
-    pinza.onclick = () => kitty.pinza();
+    strobery.onclick = () => {
+        kitty.strobery();
+        changeImg(petImg, 'assets/cat/animated-cat.gif', 'assets/cat/cat-noodles.gif');
+    }
+    burgir.onclick = () => {
+        kitty.burgir();
+        changeImg(petImg, 'assets/cat/animated-cat.gif', 'assets/cat/cat-noodles.gif');
+    }
+    pinza.onclick = () => {
+        kitty.pinza();
+        changeImg(petImg, 'assets/cat/animated-cat.gif', 'assets/cat/cat-noodles.gif');
+    }
+
 })
 
 

@@ -1,5 +1,9 @@
+let btn = document.getElementById('btn')
+
 let numsNL = document.querySelectorAll('.num'),
 numsDivs = Array.from(numsNL),
+signsNL = document.querySelectorAll('.sign'),
+signsDivs = Array.from(signsNL),
 one = 1,
 two = 2,
 three = 3,
@@ -12,7 +16,12 @@ nine = 9,
 zero = 0,
 numArr = [one, two, three, four, five, six, seven, eight, nine, zero],
 digitsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+let signsArr = ['+', '-', '/', '*', '='];
 let ttt = document.getElementById('ttt');
+
+
+
+
 
 class Calc {
 
@@ -21,40 +30,70 @@ class Calc {
         this.b = b;
     }
 
-    getNum(pressed) {
-        for (let num of numArr) {
-            if (Number(pressed.textContent) === num) {
-                return (pressed)
-            }
-        }
-        return pressed
-    }
+
 
 
 }
 
-// console.log(numsDivs);
+//!!!оптимизировать под знаки
+function getNum(pressed) {
+    for (let num of numArr) {
+        if (Number(pressed.textContent) === num) {
+            return pressed
+        }
+    }
+    return pressed
+}
 
-const calc = new Calc();
+
+
+let a = []
+numsDivs.map(function returnPressedNum(item) {
+    item.addEventListener('click', () => {
+        // получила число, которое нажали
+        let pressedItem = getNum(item);
+        a.push(pressedItem.textContent);
+
+        console.log(a.join(''));
+
+        //изменила текстовое поле
+        ttt.textContent += item.textContent
+
+    })
+})
+
+btn.onclick = () => console.log(a);
+
+
 
 function getNumber() {
-    numsDivs.map((item) => {
-        item.addEventListener('click', () => {
-            // получила число, которое нажали
-            calc.getNum(item)
-            let pressedNumber = Number(item.textContent);
 
-
-            //изменила текстовое поле
-            ttt.textContent += item.textContent
-
-            // забрала числовое значение нажатого числа
-            return pressedNumber
-        })
-    })
 }
 
-getNumber()
+
+function getSign(pressed) {
+    for (let sign of signsArr) {
+        if (pressed.textContent === sign) {
+            return (pressed)
+        }
+    }
+    return pressed
+}
+
+
+
+
+const copyURL = document.getElementById('copyURL');
+const forward = document.getElementById('forward');
+const back = document.getElementById('back');
+
+
+copyURL.onclick = () => {
+    console.log(location.href);
+}
+// forward.onclick = () => history.forward();
+// back.onclick = () => history.back();
+
 
 
 
